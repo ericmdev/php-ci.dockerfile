@@ -1,25 +1,25 @@
-## Dockerfile: Debian - PHP Continuous Inspection
+## Dockerfile: Debian - PHP QA Tools
 
-[![Build Status](https://travis-ci.org/ericmdev/php-ci.dockerfile.svg?branch=master)](https://travis-ci.org/ericmdev/php-ci.dockerfile)
+[![Build Status](https://travis-ci.org/ericmdev/php-qa-tools.dockerfile.svg?branch=master)](https://travis-ci.org/ericmdev/php-qa-tools.dockerfile)
 
-**Dockerfile** of [Debian](https://www.debian.org/) PHP continuous inspection software:
+**Dockerfile** of [Debian](https://www.debian.org/) PHP QA tools:
 
-- sonarqube
 - phpdocumentor
 - phpcpd
 - phploc
 - phpmd
 - pdepend
 - php_codesniffer
+- phpunit
 
 *Requirements*
 - [Docker](https://www.docker.com/) 
 
 *Base Docker Image*
-- [sonarqube:5.1](https://hub.docker.com/_/sonarqube/)
+- [ericmdev/php5](https://hub.docker.com/r/ericmdev/php5/)
 
 *Docker Pull Command*
-- `docker pull ericmdev/php-ci`
+- `docker pull ericmdev/php-qa-tools`
 
 ### Usage
 
