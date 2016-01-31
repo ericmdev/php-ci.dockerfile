@@ -24,7 +24,12 @@ ls:
 ls-images:
 	docker images
 
-# Run the interactive container.
+# Run the container.
 .PHONY: run
 run:
-	docker run -i -t --name php-qa-tools-container php-qa-tools-image
+	docker run -d --name php-qa-tools-container php-qa-tools-image
+
+# Execute the interactive bash of the container.
+.PHONY: exec
+exec:
+	docker exec -it php-qa-tools-container bash
