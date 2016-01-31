@@ -29,8 +29,11 @@ RUN wget -c https://github.com/bytepark/php-phar-qatools/raw/master/phpcb.phar \
 RUN wget -c https://phar.phpunit.de/phpunit.phar \
 			-P /bin/
 
+# Add scripts.
+ADD ./bin/ /bin
+
 # Configure executable.
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["sh", "/bin/start.sh"]
 
 # Define default command.
 CMD []
