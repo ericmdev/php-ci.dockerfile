@@ -8,5 +8,3 @@ services:
 script:
   - make
   - make ls-images
-  - make run
-  - make ls
