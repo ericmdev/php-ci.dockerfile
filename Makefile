@@ -1,18 +1,18 @@
 # Build the image.
 .PHONY: build
 build:
-	docker build -t php-ci-image -f Dockerfile .
+	docker build -t php-qa-tools-image -f Dockerfile .
 
 # Stop and remove all containers.
 .PHONY: clean
 clean:
-	docker stop php-ci-container
-	docker rm php-ci-container
+	docker stop php-qa-tools-container
+	docker rm php-qa-tools-container
 
 # Remove the image.
 .PHONY: clean-image
 clean-image:
-	docker rm php-ci-image
+	docker rm php-qa-tools-image
 
 # List all containers.
 .PHONY: ls
@@ -27,9 +27,4 @@ ls-images:
 # Run the interactive container.
 .PHONY: run
 run:
-	docker run -d --name php-ci-container -p 9000:9000 -p 9092:9092 php-ci-image
-
-# Execute the interactive bash of the container.
-.PHONY: exec
-exec:
-	docker exec -it php-ci-container bash
+	docker run -i -t --name php-qa-tools-container php-qa-tools-image
